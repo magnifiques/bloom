@@ -8,12 +8,12 @@ const HomeCard = ({
   title,
   subtitle,
   src,
-  bgColor,
+  className,
   handleClick,
 }: HomeCardType) => {
   return (
     <div
-      className={`bg-${bgColor}-1 px-4 py-6 flex flex-col justify-between w-full xl:max-w-[270px] min-h-[260px] rounded-[14px] cursor-pointer`}
+      className={` ${className} px-4 py-6 flex flex-col justify-between w-full xl:max-w-[270px] min-h-[260px] rounded-[14px] cursor-pointer`}
       onClick={() => handleClick()}
     >
       <div className="flex-center glassmorphism size-12 rounded-[12px]">

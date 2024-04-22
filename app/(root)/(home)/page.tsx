@@ -1,15 +1,8 @@
 "use client";
-import React, { useState } from "react";
-import { homeCards } from "@/constants/homecards";
-import HomeCard from "@/components/HomeCard";
-import MeetingModal from "@/components/MeetingModal";
+import MeetingType from "@/components/MeetingType";
+import React from "react";
 
 const Home = () => {
-  const [meetingType, setMeetingType] = useState<
-    "isScheduledMeeting" | "isJoiningMeeting" | "isInstantMeeting" | undefined
-  >();
-
-  const createMeeting = () => {};
   const date = new Date();
 
   const time = date.toLocaleTimeString("en-US", {
@@ -37,34 +30,8 @@ const Home = () => {
           </div>
         </div>
       </div>
-      {homeCards.map((list) => {
-        return (
-          <HomeCard
-            key={list.src}
-            title={list.title}
-            subtitle={list.subtitle}
-            src={list.src}
-            bgColor={list.bgColor}
-            handleClick={() =>
-              setMeetingType(
-                list.state as
-                  | "isScheduledMeeting"
-                  | "isJoiningMeeting"
-                  | "isInstantMeeting"
-                  | undefined
-              )
-            }
-          />
-        );
-      })}
-      <MeetingModal
-        isOpen={meetingType === "isInstantMeeting"}
-        onClose={() => setMeetingType(undefined)}
-        title="Start An Instant Meeting"
-        className="text-center"
-        buttonText="Start Meeting"
-        handleClick={createMeeting}
-      />
+
+      <MeetingType />
     </section>
   );
 };
