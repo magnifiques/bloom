@@ -78,10 +78,11 @@ const MeetingType = () => {
 
   return (
     <section className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-4">
-      {homeCards.map((list) => {
+      {homeCards.map((list, index) => {
         return (
           <HomeCard
             key={list.src}
+            index={index}
             title={list.title}
             subtitle={list.subtitle}
             src={list.src}

@@ -4,5 +4,6 @@ export type HomeCardType = {
   src: string;
   className: string;
   state?: string;
+  index: number;
   handleClick: () => void;
 };
