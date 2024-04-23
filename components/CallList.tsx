@@ -4,9 +4,10 @@
 import { useGetCalls } from "@/hooks/useGetCalls";
 import { Call, CallRecording } from "@stream-io/video-react-sdk";
 import { useRouter } from "next/navigation";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import MeetingCard from "./MeetingCard";
 import Loader from "./Loader";
+import { toast } from "./ui/use-toast";
 
 const CallList = ({
   type,
@@ -18,6 +19,27 @@ const CallList = ({
 
   const router = useRouter();
   const [recordings, setRecordings] = useState<CallRecording[]>([]);
+
+  useEffect(() => {
+    const fetchRecordings = async () => {
+      try {
+        const callData = await Promise.all(
+          callRecordings.map((meeting) => meeting.queryRecordings())
+        );
+
+        const recordings = callData
+          .filter((recording) => recording.recordings.length > 0)
+          .flatMap((call) => call.recordings);
+
+        setRecordings(recordings);
+      } catch (error) {
+        toast({
+          title: "Please Try Again Later",
+        });
+      }
+    };
+    if (type === "recordings") fetchRecordings();
+  }, [type, callRecordings]);
 
   if (isLoading) return <Loader />;
 
@@ -50,7 +72,6 @@ const CallList = ({
   const calls = getCalls();
   const noCallsMessage = getNoCalls();
 
-  console.log(noCallsMessage);
   return (
     <div className="grid grid-cols-1 gap-5 xl:grid-cols-2">
       {calls && calls.length > 0 ? (
@@ -58,7 +79,9 @@ const CallList = ({
           <MeetingCard
             key={(meeting as Call).id}
             title={
-              (meeting as Call).state.custom.description || "No Description"
+              (meeting as Call).state?.custom.description ||
+              meeting.filename.substring(0, 26) ||
+              "No Description"
             }
             date={
               (meeting as Call).state.startsAt?.toLocaleString() ||
