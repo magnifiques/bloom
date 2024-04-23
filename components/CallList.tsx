@@ -98,7 +98,7 @@ const CallList = ({
             link={
               type === "recordings"
                 ? meeting.url
-                : `${process.env.NEXT_PUBLIC_BASE_URL}/meeting/${meeting.id}`
+                : `${process.env.NEXT_PUBLIC_APP_URL}/meeting/${meeting.id}`
             }
             icon={
               type === "previous"

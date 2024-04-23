@@ -20,11 +20,11 @@ export const homeCards = [
     className: "purple",
     state: "isScheduledMeeting",
   },
-  {
-    title: "Video Recordings",
-    subtitle: "View Your Recorded Meetings",
-    src: "/icons/Video.svg",
-    className: "yellow",
-    state: undefined,
-  },
+  // {
+  //   title: "Video Recordings",
+  //   subtitle: "View Your Recorded Meetings",
+  //   src: "/icons/Video.svg",
+  //   className: "yellow",
+  //   state: undefined,
+  // },
 ];

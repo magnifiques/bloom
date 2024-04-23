@@ -79,7 +79,7 @@ const config = {
         sm: "calc(var(--radius) - 4px)",
       },
       backgroundImage: {
-        hero: "url('/images/hero-background.png')",
+        hero: "url('/images/hero-background.jpg')",
       },
       keyframes: {
         "accordion-down": {

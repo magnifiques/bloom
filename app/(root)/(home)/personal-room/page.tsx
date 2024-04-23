@@ -12,7 +12,7 @@ const PersonalRoomPage = () => {
   const { user } = useUser();
 
   const router = useRouter();
-  const meetingLink = `${process.env.NEXT_PUBLIC_BASE_URL}/meeting/${user?.id}?personal=true`;
+  const meetingLink = `${process.env.NEXT_PUBLIC_APP_URL}/meeting/${user?.id}?personal=true`;
 
   const { call } = useGetCallById(user?.id!);
 

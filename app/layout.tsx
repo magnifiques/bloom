@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   title: "Bloom - Connect Seamlessly!",
   description: "Instantly create or join your meeting with few clicks!",
   icons: {
-    icon: "/icons/food.ico",
+    icon: "/favicon.ico",
   },
 };
 

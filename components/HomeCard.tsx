@@ -5,10 +5,9 @@ import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 const backgroundColor = [
-  "px-4 py-6 flex flex-col justify-between w-full xl:max-w-[270px] min-h-[260px] rounded-[14px] cursor-pointer bg-orange-1",
-  "px-4 py-6 flex flex-col justify-between w-full xl:max-w-[270px] min-h-[260px] rounded-[14px] cursor-pointer bg-blue-1",
-  "px-4 py-6 flex flex-col justify-between w-full xl:max-w-[270px] min-h-[260px] rounded-[14px] cursor-pointer bg-purple-1",
-  "px-4 py-6 flex flex-col justify-between w-full xl:max-w-[270px] min-h-[260px] rounded-[14px] cursor-pointer bg-yellow-1",
+  "px-4 py-6 flex flex-col justify-between w-full xl:max-w-[400px] min-h-[260px] rounded-[14px] cursor-pointer bg-orange-1",
+  "px-4 py-6 flex flex-col justify-between w-full xl:max-w-[400px] min-h-[260px] rounded-[14px] cursor-pointer bg-blue-1",
+  "px-4 py-6 flex flex-col justify-between w-full xl:max-w-[400px] min-h-[260px] rounded-[14px] cursor-pointer bg-purple-1",
 ];
 
 const HomeCard = ({
